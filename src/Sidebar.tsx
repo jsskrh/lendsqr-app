@@ -1,5 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
+import SubmenuItem from "./SubmenuItem";
 
 const Sidebar = () => {
   interface Submenu {
@@ -55,12 +56,11 @@ const Sidebar = () => {
               <ul className="submenu-items">
                 {submenu.items.map((submenuItem) => {
                   return (
-                    <a href={submenuItem.link} className="sidemenu-link">
-                      <li className="submenu-items-items">
-                        <div className="icon-container"></div>
-                        <span className="link-text">{submenuItem.name}</span>
-                      </li>
-                    </a>
+                    <SubmenuItem
+                      name={submenuItem.name}
+                      link={submenuItem.link}
+                      icon={submenuItem.icon}
+                    />
                   );
                 })}
               </ul>
@@ -71,7 +71,7 @@ const Sidebar = () => {
       <div className="logout-option">
         <a href="#" className="sidemenu-link">
           <div className="submenu-items-items">
-            <div className="icon-container"></div>
+            <div className="icon-container">#</div>
             <span className="link-text">Logout</span>
           </div>
         </a>

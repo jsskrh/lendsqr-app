@@ -27,6 +27,20 @@
   display: flex;
 }
 
+.active.submenu-items-items {
+  background: #39cdcc14;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.active-bar {
+  height: 40px;
+  width: 3px;
+  background: #39cdcc;
+  margin-right: 27px;
+}
+
 .icon-container {
   height: 25px;
   width: 25px;
