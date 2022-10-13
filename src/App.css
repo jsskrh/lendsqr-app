@@ -1,0 +1,16 @@
+/* .App {
+  font-family: "Avenir-next";
+} */
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+li {
+  list-style: none;
+}
+
+h3 {
+  margin: 0;
+}

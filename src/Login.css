@@ -1,0 +1,184 @@
+.login-page {
+  height: 100vh;
+  width: 100vw;
+}
+
+.login-page-inner {
+  height: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.login-page-right,
+.login-page-left {
+  display: flex;
+  align-items: center;
+}
+
+.login-page-left {
+  position: relative;
+}
+
+.logo-container {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  padding: 30px;
+}
+
+.logo {
+  height: 25px;
+  width: 25px;
+  margin-right: 12px;
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.logo-text {
+  font-size: 36px;
+}
+
+.image-container {
+  display: none;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.page-content {
+  width: 100%;
+}
+
+.heading-container {
+  margin-bottom: 60px;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 55px;
+  letter-spacing: -0.04em;
+  color: #213f7d;
+}
+
+.sub-heading {
+  font-size: 20px;
+  color: #545f7d;
+}
+
+.login-form {
+  width: 450px;
+}
+
+.form-input input {
+  display: block;
+  padding: 17px;
+  width: 100%;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+  border: 2px solid rgba(84, 95, 125, 0.15);
+  border-radius: 5px;
+}
+
+.forgot-password {
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #39cdcc;
+  margin-bottom: 30px;
+}
+
+.login-button {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 15px 0;
+  color: #fff;
+  letter-spacing: 0.1em;
+  background: #39cdcc;
+  border-radius: 8px;
+  border: none;
+}
+
+@media screen and (max-width: 700px) {
+  .image-container {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    height: 195px;
+  }
+
+  .login-page-right {
+    margin-top: 100px;
+  }
+
+  .login-form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .image-container {
+    height: 150px;
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .login-page {
+    height: 100%;
+  }
+
+  .image-container {
+    height: 70px;
+    top: 150px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .image-container {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .login-page-inner {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .page-content {
+    padding-left: 50px;
+  }
+}
+
+@media screen and (min-width: 1112px) {
+  .login-page-left,
+  .login-page-right {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1160px) {
+  .image-container {
+    height: 337.57px;
+  }
+
+  .page-content {
+    padding-left: 100px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .login-page-inner {
+    padding: 67px;
+  }
+}

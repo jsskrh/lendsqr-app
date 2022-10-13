@@ -1,7 +1,14 @@
 import React from "react";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div className="home-page">
+      <Header />
+      <Sidebar />
+    </div>
+  );
 };
 
 export default Home;
