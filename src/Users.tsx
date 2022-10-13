@@ -7,6 +7,9 @@ const Users = () => {
     <div className="users">
       <Header />
       <Sidebar />
+      <div className="main">
+        <h2 className="heading">Users</h2>
+      </div>
     </div>
   );
 };
