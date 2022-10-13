@@ -1,6 +1,7 @@
 .sidebar {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.04);
   width: 280px;
+  padding: 13px 0;
 }
 
 .submenus {
@@ -20,6 +21,15 @@
 
 .submenu-items {
   padding: 0 0 20px 0;
+}
+
+.sidebar-option .submenu-items-items {
+  padding: 26px 0 26px 30px;
+  display: flex;
+}
+
+.dropdown-arrow {
+  margin-left: 10px;
 }
 
 .submenu-items-items {
