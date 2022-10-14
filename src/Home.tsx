@@ -3,12 +3,7 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 
 const Home = () => {
-  return (
-    <div className="home-page">
-      <Header />
-      <Sidebar />
-    </div>
-  );
+  return <div className="home-page"></div>;
 };
 
 export default Home;
