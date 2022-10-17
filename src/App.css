@@ -8,12 +8,14 @@ li {
 }
 
 h3,
-h2 {
+h2,
+h5 {
   margin: 0;
 }
 
 .main {
   margin-left: 280px;
+  padding-top: 160px !important;
   padding: 60px;
   background-color: rgb(251, 251, 251);
 }
