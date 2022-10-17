@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import FilterForm from "./FilterForm";
 import Header from "./Header";
 import InfoCard from "./InfoCard";
 import PageScroll from "./PageScroll";
@@ -38,6 +39,7 @@ const Users = () => {
   const [page, setPage] = useState<number>(1);
   const [pageRange, setPageRange] = useState<number[]>([]);
   const [visibleUsers, setVisibleUsers] = useState<User[]>([]);
+  const [filterFormToggle, setFilterFormToggle] = useState(false);
 
   const fetchUsers = async () => {
     try {
@@ -80,28 +82,61 @@ const Users = () => {
         <InfoCard type="users with savings" amount={users.length} />
       </div>
       <table className="user-data-table">
-        <tr className="header-row">
-          <TableHeader name="Organisation" />
-          <TableHeader name="Username" />
-          <TableHeader name="Email" />
-          <TableHeader name="Phone Number" />
-          <TableHeader name="Date Joined" />
-          <TableHeader name="Status" />
-          <TableHeader name="&nbsp;" />
-        </tr>
-        {visibleUsers.map((user) => {
-          return (
-            // <div>qwerty</div>
-            <TableRow
-              organisation={user.orgName}
-              username={user.userName}
-              email={user.email}
-              phone={user.phoneNumber}
-              dateJoined={user.createdAt}
-              status={user.status}
+        <thead>
+          <tr className="header-row">
+            <TableHeader
+              name="Organisation"
+              setFilterFormToggle={setFilterFormToggle}
+              filterFormToggle={filterFormToggle}
             />
-          );
-        })}
+            <TableHeader
+              name="Username"
+              setFilterFormToggle={setFilterFormToggle}
+              filterFormToggle={filterFormToggle}
+            />
+            <TableHeader
+              name="Email"
+              setFilterFormToggle={setFilterFormToggle}
+              filterFormToggle={filterFormToggle}
+            />
+            <TableHeader
+              name="Phone Number"
+              setFilterFormToggle={setFilterFormToggle}
+              filterFormToggle={filterFormToggle}
+            />
+            <TableHeader
+              name="Date Joined"
+              setFilterFormToggle={setFilterFormToggle}
+              filterFormToggle={filterFormToggle}
+            />
+            <TableHeader
+              name="Status"
+              setFilterFormToggle={setFilterFormToggle}
+              filterFormToggle={filterFormToggle}
+            />
+            <TableHeader
+              name="&nbsp;"
+              setFilterFormToggle={setFilterFormToggle}
+              filterFormToggle={filterFormToggle}
+            />
+          </tr>
+        </thead>
+        <tbody>
+          <FilterForm filterFormToggle={filterFormToggle} />
+          {visibleUsers.map((user) => {
+            return (
+              // <div>qwerty</div>
+              <TableRow
+                organisation={user.orgName}
+                username={user.userName}
+                email={user.email}
+                phone={user.phoneNumber}
+                dateJoined={user.createdAt}
+                status={user.status}
+              />
+            );
+          })}
+        </tbody>
       </table>
       <PageScroll
         rowsPerPage={rowsPerPage}

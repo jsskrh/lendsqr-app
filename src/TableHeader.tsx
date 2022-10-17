@@ -1,14 +1,25 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 interface HeaderProps {
   name: String;
+  setFilterFormToggle: Dispatch<SetStateAction<boolean>>;
+  filterFormToggle: Boolean;
 }
 
-const TableHeader = ({ name }: HeaderProps) => {
+const TableHeader = ({
+  name,
+  setFilterFormToggle,
+  filterFormToggle,
+}: HeaderProps) => {
   return (
     <th className="col-header">
       <span className="col-heading">{name}</span>
-      <span className="filter-icon">
+      <span
+        className="filter-icon"
+        onClick={() => {
+          setFilterFormToggle(!filterFormToggle);
+        }}
+      >
         <svg
           width="16"
           height="12"
