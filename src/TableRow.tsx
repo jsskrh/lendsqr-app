@@ -17,13 +17,32 @@ const TableRow = ({
   dateJoined,
   status,
 }: RowData) => {
+  const convertDate = (zuluDate: any) => {
+    var date = new Date(zuluDate);
+    var usDate = date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+    const convertTime = (date: Date) => {
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var ampm = hours >= 12 ? "AM" : "PM";
+      hours = hours % 12;
+      hours = hours ? hours : 12; // the hour '0' should be '12'
+      var minCont = minutes < 10 ? "0" + minutes : minutes;
+      var strTime = hours + ":" + minCont + " " + ampm;
+      return strTime;
+    };
+    return usDate + " " + convertTime(date);
+  };
   return (
     <tr className="table-row">
       <td className="table-cell">{organisation}</td>
       <td className="table-cell">{username}</td>
       <td className="table-cell email-cell">{email}</td>
       <td className="table-cell phone-cell">{phone}</td>
-      <td className="table-cell">{dateJoined}</td>
+      <td className="table-cell">{convertDate(dateJoined)}</td>
       <td className="table-cell">
         <div
           className={
