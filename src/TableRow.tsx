@@ -21,8 +21,8 @@ const TableRow = ({
     <tr className="table-row">
       <td className="table-cell">{organisation}</td>
       <td className="table-cell">{username}</td>
-      <td className="table-cell">{email}</td>
-      <td className="table-cell">{phone}</td>
+      <td className="table-cell email-cell">{email}</td>
+      <td className="table-cell phone-cell">{phone}</td>
       <td className="table-cell">{dateJoined}</td>
       <td className="table-cell">
         <div
@@ -36,7 +36,8 @@ const TableRow = ({
               : "status blacklisted"
           }
         >
-          {status}
+          {/* {status} */}
+          Pending
         </div>
       </td>
       <td className="table-cell">

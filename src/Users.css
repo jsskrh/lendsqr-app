@@ -64,21 +64,23 @@
   border-radius: 4px;
   width: 100%;
   margin-bottom: 20px;
+  color: #545f7d;
 }
 
 .col-header {
   padding: 30px 0;
   text-align: start;
+  white-space: nowrap;
 }
 
 .col-header:nth-child(1) {
   padding-left: 30px;
 }
 
-.col-header:nth-last-child(1) {
+/* .col-header:nth-last-child(1) {
   padding-left: 60px;
   padding-right: 30px;
-}
+} */
 
 .col-header:nth-last-child(1) .col-heading {
   margin: 0;
@@ -97,8 +99,14 @@
 }
 
 .table-cell {
-  padding: 23px 0;
+  padding: 21px 0;
   border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+  font-size: 13px;
+}
+
+.table-cell:nth-last-child(1) {
+  padding-left: 43px;
+  padding-right: 30px;
 }
 
 .table-row:nth-last-child(1) .table-cell {
@@ -111,6 +119,14 @@
 
 .table-row .table-cell:nth-last-child(1) {
   text-align: end;
+}
+
+.email-cell {
+  text-transform: lowercase;
+}
+
+.phone-cell {
+  white-space: nowrap;
 }
 
 .status {
@@ -139,6 +155,8 @@
 .page-scroll {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 206px;
+  color: #545f7d;
 }
 
 .page-scroll-left,
@@ -147,17 +165,49 @@
   align-items: center;
 }
 
+.page-range-container {
+  position: relative;
+  cursor: pointer;
+}
+
 .scroll-amount-container {
   background: rgba(33, 63, 125, 0.1);
-  border-radius: 4px;
   padding: 7px 12px;
   margin: 0 10px;
   display: flex;
   align-items: center;
 }
 
+.scroll-amount-container.active-option {
+  border-radius: 4px;
+}
+
 .scroll-amount {
   margin-right: 19px;
+}
+
+.page-range-select {
+  flex-direction: column;
+  position: absolute;
+  display: none;
+}
+
+.page-range-select.show {
+  display: flex;
+}
+
+.page-range-select .scroll-amount-container.select-option {
+  border-radius: none;
+  height: 18px;
+  width: 47px;
+}
+
+.page-range-select .scroll-amount-container.select-option .scroll-amount {
+  opacity: 0.6;
+}
+
+.page-range-select .scroll-amount-container.select-option:hover .scroll-amount {
+  opacity: 1;
 }
 
 .arrow-left-container,
@@ -165,6 +215,7 @@
   background: rgba(33, 63, 125, 0.1);
   border-radius: 4px;
   padding: 6px 9px;
+  cursor: pointer;
 }
 
 .arrow-right-container {
@@ -173,4 +224,11 @@
 
 .scroll-page-number {
   margin-left: 20px;
+  color: #545f7d;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.scroll-page-number.active {
+  opacity: 1;
 }

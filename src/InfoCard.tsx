@@ -1,6 +1,11 @@
 import React from "react";
 
-const InfoCard = () => {
+interface CardInfo {
+  type: string;
+  amount: number;
+}
+
+const InfoCard = ({ type, amount }: CardInfo) => {
   return (
     <div className="info-card">
       <div className="card-icon-container">
@@ -26,10 +31,10 @@ const InfoCard = () => {
         </svg>
       </div>
       <div className="card-name">
-        <span className="name-text">Users</span>
+        <span className="name-text">{type}</span>
       </div>
       <div className="card-data">
-        <span className="data-text">2,453</span>
+        <span className="data-text">{amount}</span>
       </div>
     </div>
   );
