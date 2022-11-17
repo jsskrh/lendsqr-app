@@ -1,10 +1,32 @@
-import React from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
+import Users from "./Users";
 
 interface FilterFormProps {
   filterFormToggle: Boolean;
+  users: any;
+  // filterSearch: any;
+  setQ: Dispatch<SetStateAction<string>>;
 }
 
-const FilterForm = ({ filterFormToggle }: FilterFormProps) => {
+const FilterForm = ({
+  filterFormToggle,
+  users,
+  // filterSearch,
+  setQ,
+}: FilterFormProps) => {
+  // const [q, setQ] = useState("");
+  // const [searchParam] = useState(["userName", "phoneNumber", "email"]);
+
+  // filterSearch = (users: any) => {
+  //   users.filter((user: any) => {
+  //     return searchParam.some((newUser) => {
+  //       return (
+  //         user[newUser].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
+  //       );
+  //     });
+  //   });
+  // };
+
   return (
     <div
       className={
@@ -23,11 +45,17 @@ const FilterForm = ({ filterFormToggle }: FilterFormProps) => {
               type="text"
               className="filter-input"
               placeholder="Username"
+              onChange={(e) => setQ(e.target.value)}
             />
           </div>
           <div className="form-input-container">
             <h5 className="input-title">Email</h5>
-            <input type="text" className="filter-input" placeholder="Email" />
+            <input
+              type="text"
+              className="filter-input"
+              placeholder="Email"
+              onChange={(e) => setQ(e.target.value)}
+            />
           </div>
           <div className="form-input-container">
             <h5 className="input-title">Date</h5>

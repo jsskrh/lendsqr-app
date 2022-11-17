@@ -40,6 +40,8 @@ const Users = () => {
   const [pageRange, setPageRange] = useState<number[]>([]);
   const [visibleUsers, setVisibleUsers] = useState<User[]>([]);
   const [filterFormToggle, setFilterFormToggle] = useState(false);
+  const [q, setQ] = useState("");
+  const [searchParam] = useState(["userName", "phoneNumber", "email"]);
 
   const fetchUsers = async () => {
     try {
@@ -57,6 +59,16 @@ const Users = () => {
     }
   };
 
+  const filterSearch = (users: User[]) => {
+    return users.filter((user: any) => {
+      return searchParam.some((newUser) => {
+        return (
+          user[newUser].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
+        );
+      });
+    });
+  };
+
   useEffect(() => {
     /* const [users, setUsers] = useState(
       JSON.parse(localStorage.getItem(userData))
@@ -66,9 +78,10 @@ const Users = () => {
   }, []);
 
   useEffect(() => {
-    setPageRange(calculateNoOfPages(users, rowsPerPage));
-    setVisibleUsers(sliceData(users, page, rowsPerPage));
-  }, [rowsPerPage, users, page]);
+    setPageRange(calculateNoOfPages(filterSearch(users), rowsPerPage));
+    // const qUsers = filterSearch(users);
+    setVisibleUsers(sliceData(filterSearch(users), page, rowsPerPage));
+  }, [rowsPerPage, users, page, q]);
 
   return (
     <div className="users">
@@ -122,7 +135,11 @@ const Users = () => {
           </tr>
         </thead>
         <tbody>
-          <FilterForm filterFormToggle={filterFormToggle} />
+          <FilterForm
+            filterFormToggle={filterFormToggle}
+            users={users}
+            setQ={setQ}
+          />
           {visibleUsers.map((user) => {
             return (
               // <div>qwerty</div>
